@@ -1,0 +1,37 @@
+[package]
+name = "ecs_bench_suite"
+version = "0.1.0"
+authors = ["Thomas Gillen <thomas.gillen@googlemail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy_ecs = "0.4"
+bevy_5_ecs = {version="0.5", package="bevy_ecs"}
+bincode = "1.3"
+cgmath = { version = "0.17", feature = ["serde"] }
+hecs = { version = "0.5", features = ["column-serialize", "row-serialize"] }
+legion = "0.3"
+legion4 = {version="0.4", package="legion"}
+planck_ecs = { version = "1.1.0", features = ["parallel"] }
+rayon = "1.3"
+ron = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+shipyard = "0.5"
+specs = {version = "0.16.1", features = ["serde"] }
+specs-derive = "0.4.1"
+ecs = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+ecs_derive = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+cross_performance = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+map = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+atom = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+share = {git = "https://github.com/GaiaWorld/pi_lib.git"}
+
+[dev-dependencies]
+criterion = "0.3"
+rayon = "1.3"
+
+[[bench]]
+name = "benchmarks"
+harness = false
